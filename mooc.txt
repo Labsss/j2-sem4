@@ -1,0 +1,24 @@
+ma version
+
+CREATE TABLE `cours` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `titre` TEXT, `description` TEXT);
+INSERT INTO cours (titre, description) VALUES ('carioca', 'on va danser comme des nuls');
+
+CREATE TABLE `leçon` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `titre` TEXT, `body` TEXT, FOREIGN KEY(cours_id) REFERENCES cours(id));
+INSERT INTO leçon (titre, body) VALUES ('lesson_1', 'tu vas en chier buddy');
+
+
+version brice 
+
+CREATE TABLE `courses` (
+  `courses_id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `title` TEXT,
+  `description` TEXT
+);
+
+CREATE TABLE `lessons` (
+  `lesson_id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `title` TEXT,
+  `body` TEXT,
+  `courses_id` INTEGER,
+  FOREIGN KEY (courses_id) REFERENCES courses(courses_id)
+);
