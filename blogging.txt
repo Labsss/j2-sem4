@@ -1,0 +1,14 @@
+CREATE TABLE `Users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, FOREIGN KEY(Articles_id) REFERENCE Articles(id));
+INSERT INTO Users (name) VALUES ('Miguel');
+
+CREATE TABLE `Articles` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT);
+INSERT INTO Articles (name) VALUES ('Cravache');
+
+CREATE TABLE `Affiliation` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `code_article` INTEGER, `code_category` INTEGER);
+INSERT INTO Affiliation (code_article, code_category) VALUES ('1', '2');
+
+CREATE TABLE `Category` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT);
+INSERT INTO Category (name) VALUES ('Equitation');
+
+CREATE TABLE `Tag` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT, `color` TEXT);
+INSERT INTO Tag (name, color) VALUES ('Equipement de poney', 'black');
